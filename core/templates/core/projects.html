@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Projects{% endblock %}
+
+{% block logo %}
+<img class="img-responsive w-100" src="{% static "core/images/logo.png" %}" alt="Logo">
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "core/css/styles.css" %}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container px-lg-5 mt-5 mb-5">
+    <div class="row mx-lg-n5">
+        {% for items in project %}
+      <div class="col-sm-12 col-md-6 col-lg-6 py-3 px-lg-5 border bg-light">
+        
+        <video controls class="w-100"><source src="{{items.video}}"></source></video>
+        <p class="intro">{{items.title}}</p>
+        <div class="mt-2">
+        <button class="btn btn-primary"><a class="text-light" href="{{items.web_url}}">Explore App</a></button>
+        <button class="btn btn-primary"><a class="text-light" href="{{items.source_code}}">Source Code</a></button>
+        </div>
+        <p class="mt-3">{{items.summary}}</p>
+      </div>
+      {% endfor %}
+    </div>
+   <div class="mt-4">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            {% if project.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+          <li class="page-item me-2"><a class="page-link" href="?page={{ project.previous_page_number}}">Previous</a></li>
+          {% endif %}
+
+          <span class="page-item active me-3">
+            Page {{ project.number }} of {{ project.paginator.num_pages }}
+          </span>
+
+          {% if project.has_next %}
+          <li class="page-item"><a class="page-link" href="?page={{ project.next_page_number }}">next</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{ project.paginator.num_pages}}">last &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+   </div>
+  </div>
+
+{% endblock %}

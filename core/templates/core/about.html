@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}About {% endblock %}
+
+{% block logo %}
+<img class="img-responsive w-100" src="{% static "core/images/logo.png" %}" alt="Logo">
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "core/css/styles.css" %}">
+{% endblock %}
+
+{% block body %}
+{% include 'core/includes/about_info.html' %}
+  {% include 'core/includes/contact.html' %}
+
+{% endblock %}

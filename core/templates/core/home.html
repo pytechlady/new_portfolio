@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Home {% endblock %}
+
+{% block logo %}
+<img class="img-responsive w-100" src="{% static "core/images/logo.png" %}" alt="Logo">
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "core/css/styles.css" %}">
+{% endblock %}
+
+{% block body %}
+<div class="thebody">
+    <div class="container content-area">
+        <div class="row mx-lg-n5">
+          <div class="col-sm col-md-12 col-lg-6 py-3 px-lg-5 pt-5 intro">
+              <h2>Hi,<br>
+              I'm <span class="the_name">Adebimpe</span>,<br>
+              Software Developer.</h2>
+              <div class="slide-container">
+                <p class="slide-text">Python / Django <br> Javascript / React <br>
+                  HTML / CSS </p>
+              </div> 
+              <!-- <a href="https://drive.google.com/file/d/10slgTU_uk1Qi5lCRNTftZJTZWiecoHzQ/view?usp=sharing"><button class="ctabtn">View Resume</button></a> -->
+              <div class="social-links">
+                <a href="https://discord.com/users/pytechlady#9342"><i class="fab fa-discord fa-pulse"></i></a>
+                <a href="https://github.com/pytechlady"><i class="fab fa-github fa-pulse"></i></a>
+                <a href="https://www.linkedin.com/in/adebimpe-afolabi-7a82a29a/" class="linkedin"><i class="fab fa-linkedin fa-pulse"></i></a>
+              </div>
+          </div>
+          <div class="col py-3 px-lg-5 px-md-5 px-sm-5 pt-5">
+              <img class="theimage w-100" src="{% static 'core/images/hero_img.png' %}" alt="picture-of-owner">
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include 'core/includes/about_info.html' %}
+        </div>
+        </div>
+    </div>
+
+      {% include 'core/includes/skills.html' %}
+
+    {% include 'core/includes/contact.html' %}
+    <footer class="thefoot">
+      <center class="container">
+        <a class="navbar-brand text-light logo" href="#"><img src="{% static "core/images/logo.png" %}"></a>
+        <div class="social-links">
+          <h5>Hi! Connect with me</h5>
+          <a href="https://discord.com/users/pytechlady#9342"><i class="fab fa-discord fa-pulse" style="color: #e7eaee;"></i></a>
+          <a href="https://github.com/pytechlady"><i class="fab fa-github fa-pulse" style="color: #e7eaee;"></i></a>
+          <a href="https://www.linkedin.com/in/adebimpe-afolabi-7a82a29a/"><i class="fab fa-linkedin fa-pulse" style="color: #e7eaee;"></i></a>
+        </div>
+          <p>&copy; Copyright Adebimpe profile. All Rights Reserved</p>
+      </center>
+    </footer>
+
+{% endblock %}
